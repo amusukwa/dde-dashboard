@@ -1,5 +1,14 @@
-import React, { Component } from "react";
-import { Card, CardTitle } from "react-materialize";
+import React, { Component } from 'react';
+import { Card, CardTitle } from 'react-materialize';
+import ReactDOM from 'react-dom';
+import * as V from 'victory';
+import {
+  VictoryLine,
+  VictoryChart,
+  VictoryAxis,
+  VictoryTheme,
+  VictoryCursorContainer,
+} from 'victory';
 
 class LineGraph extends Component {
   render() {
@@ -7,17 +16,22 @@ class LineGraph extends Component {
       <div>
         <div className="">
           <div className="col mfl-tm-5 ">
-            <Card
-              className="small"
-              header={
-                <CardTitle image="img/sample-1.jpg">Card Title</CardTitle>
-              }
-              actions={[<a href="#">This is a Link</a>]}
-            >
-              I am a very simple card. I am good at containing small bits of
-              information. I am convenient because I require little markup to
-              use effectively.
-            </Card>
+            <VictoryChart theme={VictoryTheme.material}>
+              <VictoryLine
+                style={{
+									labels: { fontSize: 12 },
+									parent: { border: '2px solid #ccc' },
+								}}
+                padding={{ top: 40, bottom: 60 }}
+                data={[
+									{ x: 1, y: 2 },
+									{ x: 2, y: 3 },
+									{ x: 3, y: 5 },
+									{ x: 4, y: 4 },
+									{ x: 5, y: 7 },
+								]}
+              />
+            </VictoryChart>
           </div>
         </div>
       </div>

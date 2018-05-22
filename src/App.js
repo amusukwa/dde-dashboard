@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import NavBar from "./Nav/NavBar";
-import LineGraph from "./charts/LineGraph";
-import Table from "./Table/Table";
+import React, { Component } from 'react';
+import NavBar from './Nav/NavBar';
+import LineGraph from './charts/LineGraph';
+import Table from './Table/Table';
 
 class App extends Component {
   render() {

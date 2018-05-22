@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Card, CardTitle } from "react-materialize";
+import React, { Component } from 'react';
+import { Card, CardTitle } from 'react-materialize';
 
 class Table extends Component {
   render() {
