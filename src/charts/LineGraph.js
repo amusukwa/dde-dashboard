@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardTitle } from 'react-materialize';
 import ReactDOM from 'react-dom';
-import * as V from 'victory';
 import {
   VictoryLine,
   VictoryChart,
@@ -9,8 +8,11 @@ import {
   VictoryTheme,
   VictoryCursorContainer,
 } from 'victory';
+import { fetchData } from '../actions';
+import { connect } from 'react-redux';
 
 class LineGraph extends Component {
+  componentDidMount() {}
   render() {
     return (
       <div>
@@ -39,4 +41,10 @@ class LineGraph extends Component {
   }
 }
 
-export default LineGraph;
+const mapStateToProps = state => ({
+  facilities: state.facilities,
+});
+
+export default connect(mapStateToProps, {
+  fetchData,
+})(LineGraph);
