@@ -17,6 +17,13 @@ import {
 	Geography
 } from 'react-simple-maps'
 
+const wrapperStyles = {
+	// width: '100%',
+	// maxWidth: '900%'
+	//margin: '0 auto',
+	align: 'left'
+}
+
 class Map extends Component {
 	constructor() {
 		super()
@@ -42,40 +49,39 @@ class Map extends Component {
 	componentDidMount() {}
 	render() {
 		return (
-			<div>
-				<div className="map-ratio-container">
-					<div className=" ">
-						<ComposableMap
-							style={{
-								width: '500%',
-								height: 3000,
-								margin: -1800,
-								top: 0,
-								bottom: 100
-							}}
-						>
-							<ZoomableGroup zoom={this.state.zoom}>
-								<Geographies geography={'topjson/map.json'}>
-									{(geographies, projection) =>
-										geographies.map(geography => (
-											<Geography
-												style={{
-													default: { fill: '#6666' },
-													hover: { fill: '#999' },
-													pressed: { fill: '#000' },
-													width: '100%'
-												}}
-												key={geography.id}
-												geography={geography}
-												projection={projection}
-											/>
-										))
-									}
-								</Geographies>
-							</ZoomableGroup>
-						</ComposableMap>
-					</div>
-				</div>
+			<div style={wrapperStyles}>
+				<ComposableMap
+					style={{
+						width: '980%',
+						height: 3500,
+						margin: -1800
+					}}
+					center={[8.2, 46.8]}
+					projectionConfig={{ scale: 130 }}
+					projection="miller"
+					//width={800}
+					//height={800}
+				>
+					<ZoomableGroup zoom={this.state.zoom}>
+						<Geographies geography={'topjson/map.json'}>
+							{(geographies, projection) =>
+								geographies.map(geography => (
+									<Geography
+										style={{
+											default: { fill: '#6666' },
+											hover: { fill: '#999' },
+											pressed: { fill: '#000' },
+											width: '100%'
+										}}
+										key={geography.id}
+										geography={geography}
+										projection={projection}
+									/>
+								))
+							}
+						</Geographies>
+					</ZoomableGroup>
+				</ComposableMap>
 			</div>
 		)
 	}
