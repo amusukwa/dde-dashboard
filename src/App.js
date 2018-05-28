@@ -3,6 +3,7 @@ import NavBar from './Nav/NavBar'
 import LineGraph from './charts/LineGraph'
 import Table from './Table/Table'
 import Map from './charts/Map'
+import PieChart from './charts/PieChart'
 import { SVGMap, Taiwan } from 'react-svg-map'
 import 'react-svg-map/lib/index.css'
 import {
@@ -11,8 +12,15 @@ import {
 	Geographies,
 	Geography
 } from 'react-simple-maps'
+import { fetchLocation } from './actions'
+import { connect } from 'react-redux'
+import ChartContainer from './common/chartContainer'
 
 class App extends Component {
+	componentWillMount() {
+		this.props.fetchLocation()
+		console.log('hello')
+	}
 	render() {
 		return (
 			<div>
@@ -41,7 +49,7 @@ class App extends Component {
 								<LineGraph />
 							</div>
 							<div className="col m3 l4 mfl-tm-10 ">
-								<LineGraph />
+								<PieChart />
 							</div>
 						</div>
 						<br />
@@ -57,4 +65,9 @@ class App extends Component {
 	}
 }
 
-export default App
+const mapStateToProps = state => ({
+	facilities: state.facilities.facilityLocation
+})
+export default connect(mapStateToProps, {
+	fetchLocation
+})(App)

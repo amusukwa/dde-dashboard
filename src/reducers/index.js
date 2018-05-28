@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import FetchDataReducer from './fetch-data-reducer';
+import { combineReducers } from 'redux'
+import FetchLocationsReducer from './fetch-locations-reducer'
 
 const rootReducer = combineReducers({
-  facilities: FetchDataReducer,
-});
+	facilities: FetchLocationsReducer
+})
 
-export default rootReducer;
+export default rootReducer

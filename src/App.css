@@ -12,25 +12,12 @@ body {
   height: 300px;
   padding: 5%;
 }
-.map-ratio-container {
-  height:400% !important;
-  width: 1000% !important;
-  padding-bottom: 60%;
-  border: 1px solid #000 !important;
-}
 
-.mfl-table tbody tr {
+
+.dash-table tbody tr {
   cursor: pointer;
 }
 
-.mfl-full-screen-search {
-  width: 100%;
-  position: absolute;
-}
-
-.mfl-normal-search {
-  width: 1%;
-}
 .dashboard-p-2 {
   padding: 2%;
 }
@@ -93,21 +80,11 @@ body {
   z-index: 999;
 }
 
-.mfl-table-card,
-.mfl-bottom-margin {
-  padding: 0px;
-  height: 100px;
-}
-.mfl-bottom-margin {
-  margin-bottom: -40px;
-  font-weight: bolder;
-  color: #ccc;
-}
 body {
   font-family: "Source Sans Pro", sans-serif;
 }
-.mfl-summary-header,
-.mfl-summary-subheader {
+.dash-summary-header,
+.dash-summary-subheader {
   width: 70%;
   margin: 20px auto;
   border-bottom: 1px solid #a6a6a6;
@@ -160,10 +137,6 @@ h6 {
   color: #666;
 }
 
-.mfl-download {
-  position: relative !important;
-  margin-top: 30px;
-}
 
 .mfl-tabs a {
   color: #0d47a1 !important;
@@ -171,66 +144,17 @@ h6 {
 .indicator {
   background-color: #0d47a1 !important;
 }
-.mfl-search-results-container {
-  background: white;
-  width: 100%;
-  height: 350px;
-  position: absolute;
-  z-index: 999;
-  box-shadow: 0px 2px 3px 1px #ccc;
-}
 
-.mfl-advanced-search {
-  position: absolute;
-  margin-top: 20px;
-}
 
-.modal-lg {
-  width: 100% !important;
-  height: 90%;
-  z-index: 999;
-}
 
-.modal-content {
-  height: 100%;
-}
 
-.mfl-modal-header {
-  font-size: 22px;
-}
 
-.advanced-search-tag-container {
-  border-top: 1px solid #ccc;
-  padding: 10px;
-}
 
-.tabs .tab a:hover,
-.tabs .tab a.active {
-  color: white !important;
-}
 
-.tabs .tab a {
-  color: white !important;
-}
 
-.mfl-select ul {
-  max-height: 400px !important;
-}
 
-select.mfl-select {
-  height: 300px;
-}
 
-.modal-content {
-  height: 400px;
-}
 
-.mfl-close {
-  font-size: 10px !important;
-  margin-left: 5px !important;
-  border-radius: 100% !important;
-  background: #ccc;
-}
 
 .mfl-close:hover {
   cursor: pointer;
@@ -257,7 +181,7 @@ select.mfl-select {
   font-size: 22px;
 }
 
-.mfl-shadow {
+.dashboard-shadow {
   box-shadow: 1px 1px 10px #000;
 }
 
@@ -301,7 +225,7 @@ select.mfl-select {
   margin: 2%;
 }
 
-.mfl-card-title {
+.dash-card-title {
   padding: 15px;
   color: white;
   font-size: 18px;
@@ -312,14 +236,6 @@ select.mfl-select {
   max-height: 400px;
 }
 
-.mfl-filter-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-  width: 100%;
-  height: 64px;
-  position: relative;
-  white-space: nowrap;
-}
 
 .mfl-icon-color {
   color: #fff;

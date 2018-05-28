@@ -7,7 +7,6 @@ import {
 	VictoryTheme,
 	VictoryCursorContainer
 } from 'victory'
-import { fetchData } from '../actions'
 import { connect } from 'react-redux'
 import ReactDOM from 'react-dom'
 import {
@@ -16,20 +15,25 @@ import {
 	Geographies,
 	Geography
 } from 'react-simple-maps'
+import { fetchLocation } from '../actions'
 
 const wrapperStyles = {
 	// width: '100%',
-	// maxWidth: '900%'
-	//margin: '0 auto',
-	align: 'left'
+	// height: -600,
+	// margin: -1600
+	width: '2000px',
+	height: '1000px'
 }
 
 class Map extends Component {
+	componentWillMount() {
+		this.props.fetchLocation()
+	}
 	constructor() {
 		super()
 
 		this.state = {
-			zoom: 5
+			zoom: 6
 		}
 
 		this.handleZoomIn = this.handleZoomIn.bind(this)
@@ -45,25 +49,23 @@ class Map extends Component {
 			zoom: this.state.zoom / 2
 		})
 	}
-
 	componentDidMount() {}
 	render() {
 		return (
 			<div style={wrapperStyles}>
 				<ComposableMap
 					style={{
-						width: '980%',
-						height: 3500,
-						margin: -1800
+						width: '100%',
+						height: 100,
+						margin: -100
 					}}
-					center={[8.2, 46.8]}
-					projectionConfig={{ scale: 130 }}
-					projection="miller"
-					//width={800}
-					//height={800}
+					projectionConfig={{ scale: 140 }}
+					projection="mercator"
+					//width={400}
+					//height={400}
 				>
 					<ZoomableGroup zoom={this.state.zoom}>
-						<Geographies geography={'topjson/map.json'}>
+						<Geographies geography={'topjson/mw-map.json'}>
 							{(geographies, projection) =>
 								geographies.map(geography => (
 									<Geography
@@ -87,8 +89,9 @@ class Map extends Component {
 	}
 }
 
-// const mapStateToProps = state => ({
-//   facilities: state.facilities,
-// });
-
-export default Map
+const mapStateToProps = state => ({
+	facilities: state.facilities.facilityLocation
+})
+export default connect(mapStateToProps, {
+	fetchLocation
+})(Map)

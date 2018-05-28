@@ -1,0 +1,45 @@
+{
+	"locations": [
+		{
+			"docid": "3d1af09f-c3a7-442e-b8cc-2a77073d5a5d",
+			"latitude": -11.8991825,
+			"longitude": 33.5923941,
+			"code": "MW",
+			"locatione_tag": "Malawi",
+			"ip_address": "172.255.182.100"
+		},
+		{
+			"docid": "fd4d4c62-cce0-4d55-a8b3-d30e758ccc64",
+			"latitude": -15.3765857,
+			"longitude": 35.3356518,
+			"code": "MW",
+			"locatione_tag": "Malawi",
+			"ip_address": "229.196.253.118"
+		},
+		{
+			"docid": "f389e30a-46cb-4b4f-8390-c9392819fdba",
+			"latitude": -9.952536,
+			"longitude": 33.9248222,
+			"code": "MW",
+			"locatione_tag": "Malawi",
+			"ip_address": "141.2.211.211"
+		},
+		{
+			"docid": "42a61466-caa1-4370-a430-967810d58f79",
+			"latitude": -15.7666707,
+			"longitude": 35.0167866,
+			"code": "MW",
+			"locatione_tag": "Malawi",
+			"ip_address": "94.248.136.217"
+		},
+
+		{
+			"docid": "f389e30a-46cb-4b4f-8390-c9392819fdba",
+			"latitude": -9.952536,
+			"longitude": 33.9248222,
+			"code": "MW",
+			"locatione_tag": "Malawi",
+			"ip_address": "141.2.211.211"
+		}
+	]
+}
