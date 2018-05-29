@@ -5,7 +5,7 @@ export default (
 	action
 ) => {
 	switch (action.type) {
-		case 'FETCH_LOCATIONS':
+		case 'FETCH_LOCATION':
 			return {
 				facilityLocation: action.payload.data
 			}

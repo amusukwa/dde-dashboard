@@ -14,7 +14,7 @@ import {
 } from 'react-simple-maps'
 import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
-import ChartContainer from './common/chartContainer'
+import DashHome from './charts/DashHome'
 
 class App extends Component {
 	componentWillMount() {
@@ -25,37 +25,32 @@ class App extends Component {
 		return (
 			<div>
 				<NavBar />
-				<div className="row mfl-tm-5">
-					<div className="col m3 l3">
+				<div />
+				<div className="row mfl-tm-2">
+					<div className="col s3 m3">
 						<Map />
 					</div>
-					<div className="col m9 l9 mfl-tm-5">
+					<div className="col s9 m9">
 						<div className="row">
-							<div className="col m4 l4 mfl-tm-5 ">
+							<div className="col s3 m3 mfl-tm-2">
 								<LineGraph />
 							</div>
-							<div className="col m4 l4 mfl-tm-10 ">
+							<div className="col s3 m3 mfl-tm-2">
 								<LineGraph />
 							</div>
-							<div className="col m4 l4 mfl-tm-10 ">
+							<div className="col s3 m3 mfl-tm-2">
+								<LineGraph />
+							</div>
+							<div className="col s3 m3 mfl-tm-2">
 								<LineGraph />
 							</div>
 						</div>
 						<div className="row">
-							<div className="col m3 l4 mfl-tm-5 ">
-								<LineGraph />
-							</div>
-							<div className="col m3 l4 mfl-tm-10 ">
-								<LineGraph />
-							</div>
-							<div className="col m3 l4 mfl-tm-10 ">
-								<PieChart />
-							</div>
-						</div>
-						<br />
-						<div className="row">
-							<div className="col m12 l12 mfl-tm-10 ">
+							<div className="col s6 m6 mfl-tm-2">
 								<Table />
+							</div>
+							<div className="col s4 m3 mfl-tm-2">
+								<PieChart />
 							</div>
 						</div>
 					</div>

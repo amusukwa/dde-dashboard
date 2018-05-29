@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import {
@@ -27,13 +28,7 @@ export default class LineGraph extends Component<Props> {
 						parent: { border: '2px solid #ccc' }
 					}}
 					padding={{ top: 40, bottom: 60 }}
-					data={[
-						{ x: 1, y: 2 },
-						{ x: 2, y: 3 },
-						{ x: 3, y: 5 },
-						{ x: 4, y: 4 },
-						{ x: 5, y: 7 }
-					]}
+					data={[{ x: 1, y: 2 }, { x: 2, y: 3 }, { x: 3, y: 5 }]}
 				/>
 			</VictoryChart>
 		)

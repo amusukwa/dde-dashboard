@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardTitle } from 'react-materialize'
 import ReactDOM from 'react-dom'
+//@flow
 import {
 	VictoryLine,
 	VictoryChart,
@@ -12,17 +13,19 @@ import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import ChartContainer from '../common/chartContainer'
 
-class PieChart extends Component {
+class PieChart extends Component<> {
 	componentDidMount() {}
 	render() {
 		const chartDefinition = (
 			<VictoryPie
-				colorScale={['tomato', 'orange', 'gold', 'cyan', 'navy']}
+				colorScale={['green', 'black', 'navy', 'cyan', 'navy']}
 				data={[
 					{ x: 'A IDs', y: 35 },
 					{ x: 'UA IDS', y: 40 },
 					{ x: ' IDS', y: 55 }
 				]}
+				width={440}
+				height={390}
 			/>
 		)
 

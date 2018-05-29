@@ -1,4 +1,6 @@
 html,
+
+
 body {
   height: 100%;
 }
@@ -9,8 +11,11 @@ body {
 }
 
 .dashboard-nav {
-  height: 300px;
-  padding: 5%;
+  height: 110px;
+  padding: 2%;
+  width:1850px;
+  margin-left: 0px;
+  margin-right:0px;
 }
 
 
@@ -24,19 +29,19 @@ body {
 .dashboard-p-5 {
   padding: 5%;
 }
-.mfl-pr-10 {
+.dash-pr-10 {
   padding-right: 10%;
 }
 
-.mfl-pl-10 {
+.dash-pl-10 {
   padding-left: 10%;
 }
 
-.mfl-pl-2 {
+.dash-pl-2 {
   padding-left: 2%;
 }
 
-.mfl-m-2 {
+.dash-m-2 {
   margin: 2%;
 }
 
@@ -146,43 +151,8 @@ h6 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-.mfl-close:hover {
-  cursor: pointer;
-}
-
-.mfl-search-feedback {
-  text-transform: uppercase;
-  margin: 5px 0px;
-  background: #666;
-  padding: 10px;
-  color: white;
-}
-
-.mfl-get-results-btn {
-  margin-top: -7px;
-  margin-right: -6px;
-}
-
-.mfl-stats-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px;
-  font-size: 22px;
-}
-
 .dashboard-shadow {
-  box-shadow: 1px 1px 10px #000;
+  box-shadow: 2px 1px 10px #000;
 }
 
 .mfl-stats-container div:first-child {
@@ -233,7 +203,7 @@ h6 {
 }
 
 .mfl-chart-container {
-  max-height: 400px;
+  max-height: 450px;
 }
 
 

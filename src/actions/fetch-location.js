@@ -4,7 +4,7 @@ export default function fetchLocation() {
 	const URL = 'http://localhost:3000/locations'
 	const request = axios.get(URL)
 	return {
-		type: 'FETCH_LOCATIONS',
+		type: 'FETCH_LOCATION',
 		payload: request
 	}
 }
