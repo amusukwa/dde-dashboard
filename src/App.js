@@ -15,6 +15,8 @@ import {
 import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
 import DashHome from './charts/DashHome'
+import { Route, Switch } from 'react-router-dom'
+import Login from './common/Login'
 
 class App extends Component {
 	componentWillMount() {
@@ -46,10 +48,10 @@ class App extends Component {
 							</div>
 						</div>
 						<div className="row">
-							<div className="col s6 m6 mfl-tm-2">
+							<div className="col s9 m6 mfl-tm-2">
 								<Table />
 							</div>
-							<div className="col s4 m3 mfl-tm-2">
+							<div className="col s3 m3 mfl-tm-2">
 								<PieChart />
 							</div>
 						</div>
