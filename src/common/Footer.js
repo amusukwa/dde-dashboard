@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Login from '../common/Login'
 
-class NavBar extends Component {
+class Footer extends Component {
 	render() {
 		return (
 			<div className="">
-				<nav className=" dashboard-nav green darken-1">
+				<nav className=" dashboard-nav grey darken-1">
 					<div>
 						<a href="#!" class="brand-logo">
-							DDE DASHBOARD
+							DDE
 						</a>
 						<ul className="right hide-on-med-and-down">
 							<li>
@@ -38,4 +38,4 @@ class NavBar extends Component {
 	}
 }
 
-export default NavBar
+export default Footer

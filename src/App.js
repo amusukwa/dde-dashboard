@@ -4,59 +4,64 @@ import LineGraph from './charts/LineGraph'
 import Table from './Table/Table'
 import Map from './charts/Map'
 import PieChart from './charts/PieChart'
-import { SVGMap, Taiwan } from 'react-svg-map'
-import 'react-svg-map/lib/index.css'
-import {
-	ComposableMap,
-	ZoomableGroup,
-	Geographies,
-	Geography
-} from 'react-simple-maps'
 import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
 import DashHome from './charts/DashHome'
 import { Route, Switch } from 'react-router-dom'
 import Login from './common/Login'
+import Locations from './Locations'
+import Footer from './common/Footer'
 
 class App extends Component {
-	componentWillMount() {
+	componentDidMount() {
 		this.props.fetchLocation()
-		console.log('hello')
+		const locations = JSON.stringify(Locations)
+		console.log(locations)
 	}
 	render() {
 		return (
 			<div>
 				<NavBar />
+
 				<div />
-				<div className="row mfl-tm-2">
-					<div className="col s3 m3">
+				<div className="row mfl-tm-2 ">
+					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
+						<charContainer />
 						<Map />
 					</div>
 					<div className="col s9 m9">
 						<div className="row">
-							<div className="col s3 m3 mfl-tm-2">
+							<div className="col s3 m3 dash-tm-5">
 								<LineGraph />
 							</div>
-							<div className="col s3 m3 mfl-tm-2">
+							<div className="col s3 m3 dash-tm-5">
 								<LineGraph />
 							</div>
-							<div className="col s3 m3 mfl-tm-2">
+							<div className="col s3 m3 dash-tm-5">
 								<LineGraph />
 							</div>
-							<div className="col s3 m3 mfl-tm-2">
+							<div className="col s3 m3 dash-tm-5">
 								<LineGraph />
 							</div>
 						</div>
 						<div className="row">
-							<div className="col s9 m6 mfl-tm-2">
+							<div className="col s6 m6 dash-tm-2">
 								<Table />
 							</div>
-							<div className="col s3 m3 mfl-tm-2">
+							<div className="col s3 m3 dash-tm-2">
+								<PieChart />
+							</div>
+							<div className="col s3 m3 dash-tm-2">
 								<PieChart />
 							</div>
 						</div>
 					</div>
 				</div>
+				<br />
+				<br />
+				<br />
+				<br />
+				<Footer />
 			</div>
 		)
 	}
