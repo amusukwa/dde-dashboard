@@ -32,7 +32,7 @@ export default class LineGraph extends Component<Props> {
 				/>
 			</VictoryChart>
 		)
-		return <ChartContainer chart={chartDefinition} />
+		return <ChartContainer title="line graph" chart={chartDefinition} />
 	}
 }
 

@@ -44,7 +44,7 @@ class Table extends Component {
 		)
 		return (
 			<div>
-				<ChartContainer chart={tableDefinition} />
+				<ChartContainer title="List of Facilities" chart={tableDefinition} />
 			</div>
 		)
 	}

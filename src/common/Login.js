@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { checkCredentials } from '../actions'
@@ -13,21 +14,11 @@ type Props = {
 }
 class Login extends Component<State, Props> {
 	state = {
-		username: null,
+		email: null,
 		password: null
 	}
-
 	loginCredentials = async () => {
-		if (!this.props.loginResponse.isLoginFailed) {
-			await sessionStorage.setItem(
-				'token',
-				this.props.loginResponse.loginResponse.id
-			)
-			await this.props.getUserDetails(
-				this.props.loginResponse.loginResponse.userId,
-				this.props.loginResponse.loginResponse.id
-			)
-		}
+		await this.props.checkCredentials(this.state.email, this.state.password)
 	}
 
 	render() {
@@ -43,12 +34,12 @@ class Login extends Component<State, Props> {
 						<input
 							onKeyUp={e =>
 								this.setState({
-									username: e.currentTarget.value
+									email: e.currentTarget.value
 								})
 							}
 							type="text"
 							className="mfl-login-input"
-							placeholder="Username"
+							placeholder="Email"
 						/>
 					</div>
 					<div className="mfl-tm-2" />
@@ -69,7 +60,7 @@ class Login extends Component<State, Props> {
 					</div>
 					<div className="mfl-tm-5" />
 					<a
-						onClick={this.props.checkCredentials}
+						onClick={this.loginCredentials}
 						className="btn-large black lighten-1"
 					>
 						Login

@@ -29,7 +29,7 @@ class PieChart extends Component<> {
 			/>
 		)
 
-		return <ChartContainer chart={chartDefinition} />
+		return <ChartContainer title="Pie Chart" chart={chartDefinition} />
 	}
 }
 

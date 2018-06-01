@@ -172,7 +172,8 @@ h6 {
   max-height: 450px;
 }
 .map-chart-container {
-  max-height: 720px;
+  max-height: 790px;
+  padding: 50px;
 }
 
 

@@ -7,16 +7,13 @@ import {
 	GoogleMap,
 	Marker
 } from 'react-google-maps'
-import Locations from '../Locations'
-const locations = JSON.stringify(Locations)
-console.log(locations)
-
+const icon = '../green-pin.svg'
 const Map = compose(
 	withProps({
 		googleMapURL:
 			'https://maps.googleapis.com/maps/api/js?key=AIzaSyB-MrJ0WnBYzAA1A2SwzyCX4UTnDi-fjw8&v=3.exp&libraries=geometry,drawing,places',
 		loadingElement: <div style={{ height: `100%` }} />,
-		containerElement: <div style={{ height: `720px` }} />,
+		containerElement: <div style={{ height: `790px` }} />,
 		mapElement: <div style={{ height: `100%` }} />
 	}),
 	withScriptjs,
@@ -36,9 +33,16 @@ const Map = compose(
 			position={{ lat: -13.96816, lng: 33.74129 }}
 			title="ABC Community, Lilongwe"
 		/>
+
 		<Marker
 			position={{ lat: -13.787, lng: 34.46235 }}
 			title="Admarc Clinic,Salima"
+			icon={{
+				icon: {
+					strokeColor: 'green',
+					scale: 3
+				}
+			}}
 		/>
 		<Marker
 			position={{ lat: -13.95473, lng: 33.7793 }}

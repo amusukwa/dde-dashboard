@@ -8,7 +8,6 @@ import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
 import DashHome from './charts/DashHome'
 import { Route, Switch } from 'react-router-dom'
-import Login from './common/Login'
 import Locations from './Locations'
 import Footer from './common/Footer'
 
@@ -25,8 +24,8 @@ class App extends Component {
 
 				<div />
 				<div className="row mfl-tm-2 ">
+					<br />
 					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
-						<charContainer />
 						<Map />
 					</div>
 					<div className="col s9 m9">
@@ -57,10 +56,7 @@ class App extends Component {
 						</div>
 					</div>
 				</div>
-				<br />
-				<br />
-				<br />
-				<br />
+
 				<Footer />
 			</div>
 		)
