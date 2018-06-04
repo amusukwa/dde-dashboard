@@ -7,9 +7,13 @@ import PieChart from './charts/PieChart'
 import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
 import DashHome from './charts/DashHome'
-import { Route, Switch } from 'react-router-dom'
 import Locations from './Locations'
 import Footer from './common/Footer'
+import Login from './common/Login'
+import Banner from './Nav/Banner'
+import { Divider } from 'react-materialize'
+//import { Link, Route, Switch, Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 class App extends Component {
 	componentDidMount() {
@@ -19,46 +23,14 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<NavBar />
-
-				<div />
-				<div className="row mfl-tm-2 ">
-					<br />
-					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
-						<Map />
-					</div>
-					<div className="col s9 m9">
-						<div className="row">
-							<div className="col s3 m3 dash-tm-5">
-								<LineGraph />
-							</div>
-							<div className="col s3 m3 dash-tm-5">
-								<LineGraph />
-							</div>
-							<div className="col s3 m3 dash-tm-5">
-								<LineGraph />
-							</div>
-							<div className="col s3 m3 dash-tm-5">
-								<LineGraph />
-							</div>
-						</div>
-						<div className="row">
-							<div className="col s6 m6 dash-tm-2">
-								<Table />
-							</div>
-							<div className="col s3 m3 dash-tm-2">
-								<PieChart />
-							</div>
-							<div className="col s3 m3 dash-tm-2">
-								<PieChart />
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<Footer />
-			</div>
+			<React.Fragment>
+				<Router>
+					<Switch>
+						<Route exact path="/" component={DashHome} />
+						<Route path="/login" component={Login} />
+					</Switch>
+				</Router>
+			</React.Fragment>
 		)
 	}
 }

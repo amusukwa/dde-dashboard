@@ -1,50 +1,58 @@
 import React, { Component } from 'react'
-
+import NavBar from '../Nav/NavBar'
 import LineGraph from '../charts/LineGraph'
 import Table from '../Table/Table'
-import Map from '../Table/Table'
+import Map from '../charts/Map'
 import PieChart from '../charts/PieChart'
-import 'react-svg-map/lib/index.css'
-import {
-	ComposableMap,
-	ZoomableGroup,
-	Geographies,
-	Geography
-} from 'react-simple-maps'
 import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
+import { Route, Switch } from 'react-router-dom'
+import Footer from '../common/Footer'
 
 class DashHome extends Component {
-	componentWillMount() {
-		this.props.fetchLocation()
-		console.log('hello')
-	}
+	componentDidMount() {}
 	render() {
 		return (
-			<div className="mfl-page-wrapper">
-				<div className="col m3 l3">
-					<h5>hello</h5>
-				</div>
-				<div className="col m9 l9 mfl-tm-5">
-					<div className="row">
-						<div className="col m4 l4 mfl-tm-2 ">
-							<LineGraph />
-						</div>
-						<div className="col m4 l4 mfl-tm-2 ">
-							<LineGraph />
-						</div>
-						<div className="col m4 l4 mfl-tm-10 " />
-					</div>
-					<div className="row">
-						<div className="col m3 l4 mfl-tm-5 " />
-						<div className="col m3 l4 mfl-tm-10 " />
-						<div className="col m3 l4 mfl-tm-10 " />
-					</div>
+			<div>
+				<NavBar />
+				<div />
+				<br />
+				<div className="row mfl-tm-2 container ">
 					<br />
-					<div className="row">
-						<div className="col m12 l12 mfl-tm-10 " />
+					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
+						<Map />
+					</div>
+					<div className="col s9 m9">
+						<div className="row">
+							<div className="dash-card-title" />
+
+							<div className="col s3 m3 dash-tm-5">
+								<LineGraph />
+							</div>
+							<div className="col s3 m3 dash-tm-5">
+								<LineGraph />
+							</div>
+							<div className="col s3 m3 dash-tm-5">
+								<LineGraph />
+							</div>
+							<div className="col s3 m3 dash-tm-5">
+								<LineGraph />
+							</div>
+						</div>
+						<div className="row">
+							<div className="col s6 m6 dash-tm-2">
+								<Table />
+							</div>
+							<div className="col s3 m3 dash-tm-2">
+								<PieChart />
+							</div>
+							<div className="col s3 m3 dash-tm-2">
+								<PieChart />
+							</div>
+						</div>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		)
 	}
