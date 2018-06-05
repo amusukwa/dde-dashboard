@@ -16,18 +16,15 @@ import { Divider } from 'react-materialize'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 class App extends Component {
-	componentDidMount() {
-		this.props.fetchLocation()
-		const locations = JSON.stringify(Locations)
-		console.log(locations)
-	}
+	componentDidMount() {}
 	render() {
 		return (
 			<React.Fragment>
+				<ul>{this.props.facilityLocations.map(fl => console.log(fl))}</ul>
 				<Router>
 					<Switch>
-						<Route exact path="/" component={DashHome} />
-						<Route path="/login" component={Login} />
+						<Route exact path="/" component={Login} />
+						<Route path="/DashHome" component={DashHome} />
 					</Switch>
 				</Router>
 			</React.Fragment>
@@ -36,7 +33,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	facilities: state.facilities.facilityLocation
+	facilityLocations: state.facilities.facilityLocations
 })
 export default connect(mapStateToProps, {
 	fetchLocation

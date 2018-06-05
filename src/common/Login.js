@@ -24,19 +24,18 @@ class Login extends Component<State, Props> {
 		password: null
 	}
 
-	componentWillMount() {
-		console.log(this.props)
-	}
+	componentWillMount() {}
 
 	loginCredentials = async () => {
 		await this.props.checkCredentials(this.state.username, this.state.password)
+		this.props.history.push('/DashHome')
 
-		// if (!this.props.loginResponse.isLoginFailed) {
-		// 	await sessionStorage.setItem(
-		// 		'token',
-		// 		this.props.loginResponse.loginResponse.id
+		//  if (!this.props.loginResponse.isLoginFailed) {
+		//  	await sessionStorage.setItem(
+		//  		'token',
+		//  		this.props.loginResponse.loginResponse.id
 		// 	)
-		// }
+		//  }
 	}
 
 	render() {
@@ -93,10 +92,9 @@ class Login extends Component<State, Props> {
 		)
 	}
 }
-const mapStateToProps = state => {
-	return {
-		loginResponse: state.authReducer
-	}
-}
+
+const mapStateToProps = state => ({
+	loginResponse: state.auth.loginResponse
+})
 
 export default connect(mapStateToProps, { checkCredentials })(Login)

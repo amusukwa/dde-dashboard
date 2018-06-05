@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import FetchLocationsReducer from './fetch-locations-reducer'
+import FetchReducer from './fetch-reducer'
 import AuthReducer from './authReducer'
 
 const rootReducer = combineReducers({
-	facilities: FetchLocationsReducer,
-	loginResponse: AuthReducer
+	facilities: FetchReducer,
+	auth: AuthReducer
 })
 
 export default rootReducer

@@ -7,7 +7,10 @@ import {
 	GoogleMap,
 	Marker
 } from 'react-google-maps'
+import { fetchLocation } from '../actions'
+import { connect } from 'react-redux'
 const icon = '../green-pin.svg'
+
 const Map = compose(
 	withProps({
 		googleMapURL:
@@ -74,5 +77,10 @@ const Map = compose(
 		<Marker position={{ lat: -14.79853, lng: 35.44326 }} title="Alinafe " />
 	</GoogleMap>
 ))
+const mapStateToProps = state => ({
+	facilityLocations: state.facilities.facilityLocations
+})
 
-export default Map
+export default connect(mapStateToProps, {
+	fetchLocation
+})(Map)

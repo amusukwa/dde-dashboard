@@ -1,15 +1,14 @@
 export default (
 	state = {
-		facilityLocation: []
+		facilityLocations: []
 	},
 	action
 ) => {
 	switch (action.type) {
-		case 'FETCH_LOCATION':
+		case 'FETCH_LOCATIONS':
 			return {
-				facilityLocation: action.payload.data
+				facilityLocations: action.payload.data
 			}
-
 		default:
 			return state
 	}

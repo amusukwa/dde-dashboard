@@ -1,18 +1,18 @@
 import axios from 'axios'
 import settings from '../settings'
-export default function checkCredentials(username, password) {
-	const END_POINT = `${settings.hostname}/api/`
-	const RESOURCE = `Clients/login/`
+export default async function checkCredentials(username, password) {
 	const credentials = {
-		username: username,
-		password: password
+		username,
+		password
 	}
 
-	const URL = `${END_POINT}${RESOURCE}`
-	const request = axios.post(URL, credentials)
+	const response = axios.post(
+		'http://71.19.156.178:3004/v1/login/',
+		credentials
+	)
 
 	return {
 		type: 'CHECK_CREDENTIALS',
-		payload: request
+		payload: response
 	}
 }
