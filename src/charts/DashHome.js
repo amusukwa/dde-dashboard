@@ -8,6 +8,7 @@ import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import Footer from '../common/Footer'
+import FacilityIds from '../common/FacilityId'
 
 class DashHome extends Component {
 	componentDidMount() {}
@@ -17,15 +18,13 @@ class DashHome extends Component {
 				<NavBar />
 				<div />
 				<br />
-				<div className="row mfl-tm-2 container ">
+				<div className="row mfl-tm-2  container">
 					<br />
 					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
 						<Map />
 					</div>
 					<div className="col s9 m9">
 						<div className="row">
-							<div className="dash-card-title" />
-
 							<div className="col s3 m3 dash-tm-5">
 								<LineGraph />
 							</div>
@@ -41,7 +40,7 @@ class DashHome extends Component {
 						</div>
 						<div className="row">
 							<div className="col s6 m6 dash-tm-2">
-								<Table />
+								<FacilityIds />
 							</div>
 							<div className="col s3 m3 dash-tm-2">
 								<PieChart />

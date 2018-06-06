@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import NavBar from './Nav/NavBar'
-import LineGraph from './charts/LineGraph'
 import Table from './Table/Table'
-import Map from './charts/Map'
 import PieChart from './charts/PieChart'
-import { fetchLocation } from './actions'
 import { connect } from 'react-redux'
 import DashHome from './charts/DashHome'
 import Locations from './Locations'
@@ -14,13 +10,17 @@ import Banner from './Nav/Banner'
 import { Divider } from 'react-materialize'
 //import { Link, Route, Switch, Router } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { fetchTotalIds, fetchLocation } from './actions'
 
 class App extends Component {
-	componentDidMount() {}
+	componentWillMount() {
+		//	this.props.fetchTotalIds()
+		this.props.fetchLocation()
+		console.log('hello')
+	}
 	render() {
 		return (
 			<React.Fragment>
-				<ul>{this.props.facilityLocations.map(fl => console.log(fl))}</ul>
 				<Router>
 					<Switch>
 						<Route exact path="/" component={Login} />
@@ -33,8 +33,10 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	facilityLocations: state.facilities.facilityLocations
+	facilityLocations: state.facilities.facilityLocations,
+	totalNpids: state.facilities.totalNpids
 })
 export default connect(mapStateToProps, {
-	fetchLocation
+	fetchLocation,
+	fetchTotalIds
 })(App)

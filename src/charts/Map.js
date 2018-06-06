@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import React, { Component } from 'react'
 import { compose, withProps } from 'recompose'
 import {
 	withScriptjs,
@@ -7,9 +7,8 @@ import {
 	GoogleMap,
 	Marker
 } from 'react-google-maps'
-import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
-const icon = '../green-pin.svg'
+import { checkCredentials, fetchTotalIds, fetchLocation } from '../actions'
 
 const Map = compose(
 	withProps({
@@ -78,6 +77,7 @@ const Map = compose(
 	</GoogleMap>
 ))
 const mapStateToProps = state => ({
+	totalNpids: state.totals.totalNpids,
 	facilityLocations: state.facilities.facilityLocations
 })
 

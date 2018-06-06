@@ -1,12 +1,13 @@
 //@flow
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { checkCredentials } from '../actions'
+import { checkCredentials, fetchTotalIds, fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import banner from '../banner.png'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route, Link } from 'react-router-dom'
 import DashHome from '../charts/DashHome'
+import Fac from './Fac'
 
 type State = {
 	username: string,
@@ -16,26 +17,23 @@ type State = {
 }
 type Props = {
 	checkCredentials: Function,
-	getUserDetails: Function
+	getUserDetails: Function,
+	fetchTotalIds: Function,
+	fetchLocation: Function
 }
 class Login extends Component<State, Props> {
 	state = {
 		username: null,
 		password: null
 	}
-
-	componentWillMount() {}
+	async componentDidMount() {
+		console.log('hello')
+	}
 
 	loginCredentials = async () => {
 		await this.props.checkCredentials(this.state.username, this.state.password)
 		this.props.history.push('/DashHome')
-
-		//  if (!this.props.loginResponse.isLoginFailed) {
-		//  	await sessionStorage.setItem(
-		//  		'token',
-		//  		this.props.loginResponse.loginResponse.id
-		// 	)
-		//  }
+		this.props.fetchLocation()
 	}
 
 	render() {
@@ -88,13 +86,26 @@ class Login extends Component<State, Props> {
 						</div>
 					</div>
 				</div>
+				<div>
+					<ul>
+						{this.props.facilityLocations.map(fl => (
+							<Fac facilityLocation={fl} />
+						))}
+					</ul>
+				</div>
 			</div>
 		)
 	}
 }
 
 const mapStateToProps = state => ({
-	loginResponse: state.auth.loginResponse
+	loginResponse: state.auth.loginResponse,
+	totalNpids: state.totals.totalNpids,
+	facilityLocations: state.facilities.facilityLocations
 })
 
-export default connect(mapStateToProps, { checkCredentials })(Login)
+export default connect(mapStateToProps, {
+	checkCredentials,
+	fetchTotalIds,
+	fetchLocation
+})(Login)

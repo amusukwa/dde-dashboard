@@ -6,9 +6,9 @@ class Footer extends Component {
 	render() {
 		return (
 			<div className="">
-				<nav className=" dashboard-nav green darken-1">
+				<nav className=" dashboard-footer green darken-1">
 					<div>
-						© 2014 Copyright Text
+						© 2018 Copyright Text
 						<a class="grey-text text-lighten-4 right" href="#!">
 							More Links
 						</a>

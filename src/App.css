@@ -17,6 +17,14 @@ body {
   margin-left: 0px;
   margin-right:0px;
 }
+.dashboard-footer{
+  height: 110px;
+  padding: 2%;
+  width:1850px;
+  margin-left: 0px;
+  margin-right:0px;
+  position: absolute;
+}
 
 
 .dash-table tbody tr {
@@ -43,14 +51,6 @@ body {
 
 .dash-m-2 {
   margin: 2%;
-}
-
-.mfl-w-9 {
-  width: 90%;
-}
-
-.mfl-bm-5 {
-  margin-bottom: 5%;
 }
 
 .dash-bm-2 {
@@ -82,10 +82,6 @@ body {
   font-size: 12px;
 }
 
-.mfl-summary-subheader {
-  border-bottom: none;
-  font-size: 18px;
-}
 
 .dash-summary-text,
 .dash-summary-subtext {
@@ -126,17 +122,6 @@ h6 {
   justify-content: space-between;
 }
 
-.mfl-stats-icon {
-  font-size: 32px;
-  color: #666;
-}
-.mfl-stats-title {
-  padding: 4px 0px;
-  border-top: 1px solid #666;
-  margin-top: 4px;
-  text-transform: uppercase;
-}
-
 .mfl-stats-number {
   font-size: 42px;
   font-weight: bold;
@@ -168,23 +153,15 @@ h6 {
   text-transform: uppercase;
   height: 20px;
 }
-
+.dash-table {
+  max-height: 450px;
+}
 .mfl-chart-container {
   max-height: 450px;
 }
 .map-chart-container {
   max-height: 790px;
   padding: 50px;
-}
-
-
-
-.mfl-icon-color {
-  color: #fff;
-}
-
-.mfl-footer-text-align {
-  text-align: left;
 }
 
 @media only screen and (min-width: 1920px) {
@@ -274,17 +251,7 @@ h6 {
   overflow: hidden;
   border: 1px black;
 }
-/*
-.input {
-    border: 5px;
-    padding: 10px 15px;
-    font: small-caption;	
-    font-size: 1.8;
-    width: calc(100% - 50px);
-    color: dark-blue-light;
-    outline: 5px;
-}
-*/
+
 
 .mfl-tm-20 {
   margin-top: 20%;
@@ -333,11 +300,11 @@ h6 {
 .mfl-banner-img,
 .mfl-parallax {
   width: 100%;
-  height: 600px;
+  height: 650px;
 }
 
 .mfl-parallax {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
   padding-top: 90px;
@@ -396,174 +363,19 @@ h6 {
   padding-top: 100px;
 }
 
-.mfl-nav-icon {
+.dash-nav-icon {
   margin-top: -2px;
 }
 
-.mfl-nav-item {
+.dash-nav-item {
   font-size: 12px !important;
   text-align: right;
-}
-
-.mfl-add-facility {
-  margin-right: -140px !important;
-}
-
-.mfl-facility-name {
-  margin-right: -30px !important;
-}
-
-.mfl-vertical-ruler {
-  float: left;
-  height: 40px;
-  width: 1px;
-  background-color: #0f1316;
-}
-.mfl-vertical-ruler-services {
-  float: left;
-  height: 350px;
-  width: 1px;
-  margin-top: -30%;
-  background-color: #0f1316;
-}
-.mfl-add-taboriginal {
-  line-height: 43px;
-  text-align: center;
-  height: 60px;
-  width: 210px;
-  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-}
-.mfl-add-tab1 {
-  line-height: 43px;
-  text-align: center;
-  height: 60px;
-  width: 210px;
-  background-color: #aabbcc !important;
-  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
-}
-.mfl-add-tabs {
-  line-height: 43px;
-  text-align: center;
-  margin-left: -60px !important;
-  height: 60px;
-  width: 210px;
-  background-color: #aabbcc !important;
-
-  -webkit-clip-path: polygon(
-    75% 0%,
-    100% 50%,
-    75% 100%,
-    0% 100%,
-    25% 50%,
-    0% 0%
-  );
-  clip-path: polygon(75% 0%, 90% 50%, 75% 100%, 10% 100%, 25% 50%, 10% 0%);
-}
-
-.mfl-add-tabresources {
-  line-height: 43px;
-  text-align: center;
-  margin-left: -88px !important;
-  height: 60px;
-  width: 210px;
-  background-color: #aabbcc !important;
-
-  -webkit-clip-path: polygon(
-    75% 0%,
-    100% 50%,
-    75% 100%,
-    0% 100%,
-    25% 50%,
-    0% 0%
-  );
-  clip-path: polygon(75% 0%, 90% 50%, 75% 100%, 10% 100%, 25% 50%, 10% 0%);
-}
-
-.mfl-add-tabcontacts {
-  line-height: 43px;
-  text-align: center;
-  margin-left: -70px !important;
-  height: 60px;
-  width: 210px;
-  background-color: #aabbcc !important;
-
-  -webkit-clip-path: polygon(
-    75% 0%,
-    100% 50%,
-    75% 100%,
-    0% 100%,
-    25% 50%,
-    0% 0%
-  );
-  clip-path: polygon(75% 0%, 85% 50%, 75% 100%, 15% 100%, 25% 50%, 15% 0%);
-}
-
-.mfl-add-facility-nav {
-  padding-left: -300px;
-}
-.mfl-tabs-text {
-  text-align: center;
-  color: white;
-}
-.indicator {
-  background-color: #fff !important;
-}
-.mfl-select-tab {
-  margin-top: 0.8px;
-}
-
-.mfl-active-tab {
-  background-color: #77a5e2 !important;
-}
-
-.mfl-inactive-tabs {
-  background-color: #a5aab1 !important;
-}
-
-.mfl-add-footer {
-  height: 60px;
-  align-items: center;
-  padding: 6px;
 }
 
 .mfl-tab-btn-space {
   margin-left: 860px !important;
   margin-top: 5px !important;
 }
-
-.mfl-tab-btn-space-previous {
-  margin-left: 700px !important;
-  margin-top: -58px !important;
-}
-
-.mfl-add-cancel-btn {
-  margin-top: 10px !important;
-}
-.mfl-tm-1 {
-  margin-top: 1%;
-}
-.mfl-tm-resource {
-  margin-top: -20px !important;
-}
-
-.mfl-tm-title {
-  margin-top: 70px !important;
-  margin-left: 10px !important;
-}
-
-.mfl-tm-title2 {
-  margin-top: 152px !important;
-  margin-left: 20px !important;
-}
-.mfl-rule-resource {
-  margin-left: 20px !important;
-}
-.mfl-rule-utility-2 {
-  margin-left: 20px !important;
-}
-
 .mfl-rule-utility {
   margin-left: 20px !important;
   margin-top: 130px !important;
