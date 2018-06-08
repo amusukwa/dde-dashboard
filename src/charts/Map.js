@@ -31,31 +31,38 @@ const Map = compose(
 		{props.isMarkerShown && (
 			<Marker position={{ lat: -13.96816, lng: 33.74129 }} />
 		)}
+
 		<Marker
 			position={{ lat: -13.96816, lng: 33.74129 }}
 			title="ABC Community, Lilongwe"
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+			}}
 		/>
 
 		<Marker
 			position={{ lat: -13.787, lng: 34.46235 }}
-			title="Admarc Clinic,Salima"
-			icon={{
-				icon: {
-					strokeColor: 'green',
-					scale: 3
-				}
+			title="Admarc Clinic,Salima urban"
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 			}}
 		/>
 		<Marker
 			position={{ lat: -13.95473, lng: 33.7793 }}
-			title="Adventist Health Clinic,Lilongwe"
+			title="Adventist Health Clinic,Lilongwe,urban"
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+			}}
 		/>
 
 		<Marker
 			position={{ lat: -13.8898, lng: 33.80487 }}
 			title="Africa leaf Clinic,Lilongwe"
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+			}}
 		/>
-		<Marker position={{ lat: -15.38361, lng: 35.3223 }} title="AHI" />
+		<Marker position={{ lat: -15.38361, lng: 35.3223 }} title="AHI,urban" />
 		<Marker position={{ lat: -15.38876, lng: 35.38508 }} title="Airwing" />
 		<Marker
 			position={{ lat: -13.96162, lng: 33.69679 }}
@@ -64,16 +71,25 @@ const Map = compose(
 		<Marker
 			position={{ lat: -13.96162, lng: 33.69679 }}
 			title="Akasale Private Wing"
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+			}}
 		/>
 		<Marker
 			position={{ lat: -13.38789, lng: 35.11493 }}
 			title="Akasale Private "
+			options={{
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+			}}
 		/>
 		<Marker
 			position={{ lat: -13.38789, lng: 34.24292 }}
 			title="Alinafe Private "
 		/>
-		<Marker position={{ lat: -14.79853, lng: 35.44326 }} title="Alinafe " />
+		<Marker
+			position={{ lat: -14.79853, lng: 35.44326 }}
+			title="Alinafe,rural"
+		/>
 	</GoogleMap>
 ))
 const mapStateToProps = state => ({

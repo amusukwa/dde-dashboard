@@ -9,9 +9,12 @@ import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import Footer from '../common/Footer'
 import FacilityIds from '../common/FacilityId'
+import FacilityLocation from '../common/FacilityLocation'
 
 class DashHome extends Component {
-	componentDidMount() {}
+	async componentWillMount() {
+		console.log(this.props)
+	}
 	render() {
 		return (
 			<div>
@@ -40,7 +43,9 @@ class DashHome extends Component {
 						</div>
 						<div className="row">
 							<div className="col s6 m6 dash-tm-2">
-								<FacilityIds />
+								{this.props.locations.map(location => (
+									<FacilityLocation location={location} />
+								))}
 							</div>
 							<div className="col s3 m3 dash-tm-2">
 								<PieChart />
@@ -49,6 +54,7 @@ class DashHome extends Component {
 								<PieChart />
 							</div>
 						</div>
+						<div />
 					</div>
 				</div>
 				<Footer />
@@ -57,9 +63,11 @@ class DashHome extends Component {
 	}
 }
 
-const mapStateToProps = state => ({
-	facilities: state.facilities.facilityLocation
-})
+const mapStateToProps = state => {
+	return {
+		locations: state.facilities.facilityLocations
+	}
+}
 export default connect(mapStateToProps, {
 	fetchLocation
 })(DashHome)

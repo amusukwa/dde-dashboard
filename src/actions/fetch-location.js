@@ -6,7 +6,7 @@ export default async function fetchLocation() {
 		url,
 		method: 'POST',
 		headers: {
-			Authorization: await sessionStorage.getItem('token')
+			Authorization: await sessionStorage.getItem('access_token')
 		}
 	})
 

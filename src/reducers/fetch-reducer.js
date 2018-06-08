@@ -1,8 +1,7 @@
 export default (
 	state = {
 		facilityLocations: [],
-		totalNpids: [],
-		counts: {}
+		totalIds: {}
 	},
 	action
 ) => {
@@ -14,13 +13,12 @@ export default (
 				facilityLocations
 			}
 		case 'FETCH_TOTAL_NPIDS':
-			console.log(action)
-			const currentState = { ...state }
-			if (action.payload.data) {
-				currentState['counts'][action.docId] =
-					action.payload.data.allocated_npids
+			const tid = {}
+			tid[action.doc_id] = action.payload.data.allocated_npids
+			return {
+				...state,
+				totalIds: { ...state.totalIds, ...tid }
 			}
-			return currentState
 			break
 		default:
 			return state

@@ -14,7 +14,8 @@ export default (
 	switch (action.type) {
 		case 'CHECK_CREDENTIALS':
 			if (action.payload.data) {
-				sessionStorage.setItem('token', action.payload.data.access_token)
+				console.log('called')
+				sessionStorage.setItem('access_token', action.payload.data.access_token)
 			}
 			return {
 				isLoginFailed: false,

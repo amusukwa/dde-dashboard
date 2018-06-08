@@ -7,7 +7,6 @@ import banner from '../banner.png'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route, Link } from 'react-router-dom'
 import DashHome from '../charts/DashHome'
-import Fac from './Fac'
 
 type State = {
 	username: string,
@@ -86,13 +85,6 @@ class Login extends Component<State, Props> {
 						</div>
 					</div>
 				</div>
-				<div>
-					<ul>
-						{this.props.facilityLocations.map(fl => (
-							<Fac facilityLocation={fl} />
-						))}
-					</ul>
-				</div>
 			</div>
 		)
 	}
@@ -100,8 +92,7 @@ class Login extends Component<State, Props> {
 
 const mapStateToProps = state => ({
 	loginResponse: state.auth.loginResponse,
-	totalNpids: state.totals.totalNpids,
-	facilityLocations: state.facilities.facilityLocations
+	totalNpids: state.totals.totalNpids
 })
 
 export default connect(mapStateToProps, {
