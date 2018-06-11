@@ -24,7 +24,7 @@ body {
   margin-left: 0px;
   margin-right:0px;
   position: fixed;
-  bottom: 0;
+  bottom : 0;
 }
 
 
@@ -112,10 +112,24 @@ h6 {
   margin-bottom: -5px;
 }
 
-
 .dashboard-shadow {
   box-shadow: 2px 1px 10px #000;
 }
+.location-shadow {
+  box-shadow: 2px 1px 5px #000;
+}
+
+.mfl-stats-container div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mfl-stats-number {
+  font-size: 42px;
+  font-weight: bold;
+}
+
 .mfl-dash-container {
   max-width: 100% !important;
   position: relative;
@@ -148,12 +162,16 @@ h6 {
 .mfl-chart-container {
   max-height: 450px;
 }
-.map-chart-container {
-  max-height: 790px;
-  padding: 50px;
+.location-chart-container {
+  max-height: 450px;
+  max-width: 400px;
 }
 
-@media only screen and (min-width: 1950px) {
+.map-chart-container {
+  max-height: 790px;
+}
+
+@media only screen and (min-width: 1920px) {
   .row .col.xl2 {
     width: 16.6666667% !important;
   }
@@ -165,3 +183,81 @@ h6 {
   }
 }
 
+.mfl-banner {
+  background: #666;
+}
+.mfl-ref {
+  position: relative;
+}
+
+.mfl-abs {
+  position: absolute;
+}
+
+.mfl-banner-img,
+.mfl-parallax {
+  width: 100%;
+  height: 650px;
+}
+
+.mfl-parallax {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.mfl-banner-img {
+  object-fit: cover;
+}
+
+.mfl-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+  margin: 10% auto;
+  padding: 30px;
+  border-left: 4px solid #141414;
+  border-right: 4px solid #1b1b1b;
+  background-color: grey;
+}
+
+.mfl-login-input {
+  height: 50px !important;
+  background-color: white !important;
+  padding-left: 10px !important;
+  color: rgb(71, 71, 71) !important;
+  font-size: 18px !important;
+  box-shadow: none !important;
+}
+
+.mfl-login-input:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.mfl-login-input-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #54617a;
+  height: 53px;
+  border-radius: 5px;
+}
+
+.mfl-login-icon {
+  padding: 15px;
+  height: 51px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.dash-nav-icon {
+  margin-top: -2px;
+}
+
+.dash-nav-item {
+  font-size: 12px !important;
+  text-align: right;
+}

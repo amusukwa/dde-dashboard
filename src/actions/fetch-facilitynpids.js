@@ -1,8 +1,9 @@
 //@flow
 import axios from 'axios'
 
-export default async function fetchTotalIds(doc_id) {
-	const url = 'http://71.19.156.178:3004/v1/total_allocated_npids'
+export default async function fetchfacilitynpids(doc_id) {
+	console.log(doc_id)
+	const url = 'http://71.19.156.178:3004/v1/npids_assigned'
 	const request = await axios({
 		url,
 		method: 'POST',
@@ -15,7 +16,7 @@ export default async function fetchTotalIds(doc_id) {
 	})
 
 	return {
-		type: 'FETCH_TOTAL_NPIDS',
+		type: 'FETCH_FACILITY_NPIDS',
 		payload: request,
 		doc_id
 	}

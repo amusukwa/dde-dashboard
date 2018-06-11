@@ -13,9 +13,7 @@ class Menu extends Component {
 						</a>
 						<ul className="right hide-on-med-and-down">
 							<li>
-								<Link to="/login">
-									<i class="material-icons">lock_open</i>
-								</Link>
+								<Link to="/">LOG OUT</Link>
 							</li>
 							<li>
 								<a href="badges.html">ADMIN</a>

@@ -1,3 +1,4 @@
+//@flow
 import axios from 'axios'
 import settings from '../settings'
 export default async function checkCredentials(username, password) {

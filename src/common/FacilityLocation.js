@@ -1,15 +1,20 @@
+//@flow
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchTotalIds } from '../actions/index'
+import { fetchTotalIds, fetchFacilityNpids } from '../actions/index'
+import ChartContainer from './chartContainer'
 class FacilityLocation extends React.Component {
-	componentWillMount() {
-		this.props.fetchTotalIds(this.props.location.doc_id)
+	async componentDidMount() {
+		await this.props.fetchTotalIds(this.props.location.doc_id)
+		//await this.props.fetchFacilitynpids(this.props.location.doc_id)
 	}
 	render() {
 		return (
-			<div>
-				facility : {this.props.location.name} allocated_npids: ======={' '}
-				{this.props.facilities.totalIds[this.props.location.doc_id]}
+			<div className="">
+				<div className="mfl-p-2 location-chart-container ">
+					<a className="collection">{this.props.location.name}</a>
+					{':'} {this.props.facilities.totalIds[this.props.location.doc_id]}
+				</div>
 			</div>
 		)
 	}
@@ -23,7 +28,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-	fetchTotalIds
+	fetchTotalIds,
+	fetchFacilityNpids
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FacilityLocation)

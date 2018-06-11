@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import banner from '../banner.png'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route, Link } from 'react-router-dom'
-import DashHome from '../charts/DashHome'
+import ChartHome from '../charts/ChartHome'
 
 type State = {
 	username: string,
@@ -25,22 +25,21 @@ class Login extends Component<State, Props> {
 		username: null,
 		password: null
 	}
-	async componentDidMount() {
-		console.log('hello')
-	}
+	async componentDidMount() {}
 
 	loginCredentials = async () => {
 		await this.props.checkCredentials(this.state.username, this.state.password)
-		this.props.history.push('/DashHome')
+		this.props.history.push('/ChartHome')
 		this.props.fetchLocation()
 	}
 
 	render() {
 		return (
-			<div className="container">
+			<div className="container grey lighten-2">
 				<div className="container mfl-dash-container mfl-ref dash-tm-2">
 					<img src={banner} className="mfl-abs mfl-banner-img" />
 					<div className="mfl-abs mfl-parallax">
+						<h4 className="grey-text">Data Demographic Exchange Dashboard</h4>
 						<div className="mfl-login-container green darken-2">
 							<h4 className="white-text" />
 							<div className="mfl-tm-2" />

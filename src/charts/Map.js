@@ -9,14 +9,15 @@ import {
 } from 'react-google-maps'
 import { connect } from 'react-redux'
 import { checkCredentials, fetchTotalIds, fetchLocation } from '../actions'
+import chartContainer from '../common/chartContainer'
 
 const Map = compose(
 	withProps({
 		googleMapURL:
 			'https://maps.googleapis.com/maps/api/js?key=AIzaSyB-MrJ0WnBYzAA1A2SwzyCX4UTnDi-fjw8&v=3.exp&libraries=geometry,drawing,places',
-		loadingElement: <div style={{ height: `100%` }} />,
-		containerElement: <div style={{ height: `620px` }} />,
-		mapElement: <div style={{ height: `100%` }} />
+		loadingElement: <div style={{ height: `100%`, width: `310px` }} />,
+		containerElement: <div style={{ height: `620px`, width: `310px` }} />,
+		mapElement: <div style={{ height: `100%`, width: `310px` }} />
 	}),
 	withScriptjs,
 	withGoogleMap
@@ -27,9 +28,6 @@ const Map = compose(
 	>
 		{props.isMarkerShown && (
 			<Marker position={{ lat: -13.9626121, lng: 33.7741195 }} />
-		)}
-		{props.isMarkerShown && (
-			<Marker position={{ lat: -13.96816, lng: 33.74129 }} />
 		)}
 
 		<Marker
@@ -92,11 +90,15 @@ const Map = compose(
 		/>
 	</GoogleMap>
 ))
-const mapStateToProps = state => ({
-	totalNpids: state.totals.totalNpids,
-	facilityLocations: state.facilities.facilityLocations
-})
 
-export default connect(mapStateToProps, {
-	fetchLocation
-})(Map)
+const mapStateToProps = state => {
+	console.log(state)
+	return {
+		facilities: state.facilities
+	}
+}
+const mapDispatchToProps = {
+	fetchTotalIds
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map)

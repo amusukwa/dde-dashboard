@@ -1,7 +1,8 @@
 export default (
 	state = {
 		facilityLocations: [],
-		totalIds: {}
+		totalIds: {},
+		facilityIds: {}
 	},
 	action
 ) => {
@@ -18,6 +19,13 @@ export default (
 			return {
 				...state,
 				totalIds: { ...state.totalIds, ...tid }
+			}
+		case 'FETCH_FACILITY_NPIDS':
+			const fid = {}
+			fid[action.doc_id] = action.payload.data.assigned_npids
+			return {
+				...state,
+				facilityIds: { ...state.facilityIds, ...fid }
 			}
 			break
 		default:
