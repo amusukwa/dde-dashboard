@@ -8,10 +8,12 @@ import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import Footer from '../common/Footer'
 import FacilityLocation from '../common/FacilityLocation'
+import fetchFacilityNpids from '../actions/fetch-facilitynpids'
 
-class DashHome extends Component {
+class ChartHome extends Component {
 	async componentWillMount() {
-		console.log(this.props)
+		await this.props.fetchFacilityNpids(this.props.location.doc_id)
+		console.log(this.props.fetchFacilityNpids(this.props.location.doc_id))
 	}
 	render() {
 		return (
@@ -67,9 +69,11 @@ class DashHome extends Component {
 
 const mapStateToProps = state => {
 	return {
-		locations: state.facilities.facilityLocations
+		locations: state.facilities.facilityLocations,
+		facilities: state.facilities
 	}
 }
 export default connect(mapStateToProps, {
+	fetchFacilityNpids,
 	fetchLocation
-})(DashHome)
+})(ChartHome)

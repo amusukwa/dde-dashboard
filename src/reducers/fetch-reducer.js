@@ -22,11 +22,12 @@ export default (
 			}
 		case 'FETCH_FACILITY_NPIDS':
 			const fid = {}
-			fid[action.doc_id] = action.payload.data.assigned_npids
+			fid[action.doc_id] = action.payload.data.assigned_npid
 			return {
 				...state,
 				facilityIds: { ...state.facilityIds, ...fid }
 			}
+			console.log(action.data.assigned_npids)
 			break
 		default:
 			return state

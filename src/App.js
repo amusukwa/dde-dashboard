@@ -3,7 +3,6 @@ import Table from './Table/Table'
 import PieChart from './charts/PieChart'
 import { connect } from 'react-redux'
 import ChartHome from './charts/ChartHome'
-import Locations from './Locations'
 import Footer from './common/Footer'
 import Login from './common/Login'
 import Banner from './Nav/Banner'
@@ -18,7 +17,7 @@ class App extends Component {
 		//this.props.fetchLocation()
 		//this.props.fetchFacilityNpids(this.props.facilityLocations.doc_id)
 		//await this.props.fetchFacilityNpids(this.props.location.doc_id)
-		console.log(this.props.facilityLocations)
+		console.log(this.props)
 	}
 	render() {
 		return (
@@ -35,7 +34,6 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log(state)
 	return {
 		facilities: state.facilities
 	}

@@ -6,7 +6,6 @@ This main server communicates to proxy servers at health facilities with BaobabH
 
 The proxy servers at the facility are able to communicate with the main server at KCH, such that if a patient visits a facility and their details match to those that already in the proxy server. The proxy server queries the main DDE server to seek authentication and if succesful the proxy server pulls the demographics from the main server.
 
-This dashboard aims to show the different statics of facilities using the DDE application, the dashboard will show the different facilities in Malawi that use the DDE application. The number of total ids assigned to a facility and the ids assigned to a facility.
+This dashboard aims to show the different statics of facilities using the DDE application, the dashboard will show the different facilities in Malawi that use the DDE application. The number of total ids assigned to a facility and the ids assigned to a facility. And also the rate of ids assigned in a day, week and a month.
 
-The rate of ids assignment to facilities per day,week,and .month.
-The dashboard was developed using React.js on the front-end, using flow-type script and airbnb style guide.
+The entire dashboard has been developed using react js, with react-google maps library for rendering the map showing facilities with DDE application. Victory charts another react library has been used to render the line graphs and charts needed.

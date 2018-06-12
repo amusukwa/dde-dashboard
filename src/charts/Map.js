@@ -40,14 +40,14 @@ const Map = compose(
 
 		<Marker
 			position={{ lat: -13.787, lng: 34.46235 }}
-			title="Admarc Clinic,Salima urban"
+			title="Admarc Clinic,Salima"
 			options={{
 				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 			}}
 		/>
 		<Marker
 			position={{ lat: -13.95473, lng: 33.7793 }}
-			title="Adventist Health Clinic,Lilongwe,urban"
+			title="Adventist Health Clinic,Lilongwe"
 			options={{
 				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 			}}
@@ -84,10 +84,7 @@ const Map = compose(
 			position={{ lat: -13.38789, lng: 34.24292 }}
 			title="Alinafe Private "
 		/>
-		<Marker
-			position={{ lat: -14.79853, lng: 35.44326 }}
-			title="Alinafe,rural"
-		/>
+		<Marker position={{ lat: -14.79853, lng: 35.44326 }} title="Alinafe" />
 	</GoogleMap>
 ))
 
