@@ -15,9 +15,9 @@ const Map = compose(
 	withProps({
 		googleMapURL:
 			'https://maps.googleapis.com/maps/api/js?key=AIzaSyB-MrJ0WnBYzAA1A2SwzyCX4UTnDi-fjw8&v=3.exp&libraries=geometry,drawing,places',
-		loadingElement: <div style={{ height: `100%`, width: `310px` }} />,
-		containerElement: <div style={{ height: `620px`, width: `310px` }} />,
-		mapElement: <div style={{ height: `100%`, width: `310px` }} />
+		loadingElement: <div style={{ height: `96%`, width: `310px` }} />,
+		containerElement: <div style={{ height: `600px`, width: `310px` }} />,
+		mapElement: <div style={{ height: `96%`, width: `310px` }} />
 	}),
 	withScriptjs,
 	withGoogleMap

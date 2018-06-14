@@ -13,10 +13,6 @@ import { fetchTotalIds, fetchLocation, fetchFacilityNpids } from './actions'
 
 class App extends Component {
 	async componentWillMount() {
-		//	this.props.fetchTotalIds()
-		//this.props.fetchLocation()
-		//this.props.fetchFacilityNpids(this.props.facilityLocations.doc_id)
-		//await this.props.fetchFacilityNpids(this.props.location.doc_id)
 		console.log(this.props)
 	}
 	render() {

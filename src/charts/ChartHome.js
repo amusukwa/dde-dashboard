@@ -7,8 +7,10 @@ import PieChart from '../charts/PieChart'
 import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import Footer from '../common/Footer'
-import FacilityLocation from '../common/FacilityLocation'
+import FacilityTotal from '../common/FacilityTotal'
 import fetchFacilityNpids from '../actions/fetch-facilitynpids'
+import { Card, CardTitle } from 'react-materialize'
+import FacilityId from '../common/FacilityId'
 
 class ChartHome extends Component {
 	async componentWillMount() {
@@ -21,44 +23,52 @@ class ChartHome extends Component {
 				<NavBar />
 				<div />
 				<br />
-				<div className="row mfl-tm-2  container">
+				<div className="row mfl-tm-2 container">
 					<br />
 					<div className="col s3 m3 dash-tm-2 dashboard-shadow map-chart-container ">
 						<Map />
 					</div>
-					<div className="col s9 m9">
+					<div className="col s6 m6">
 						<div className="row">
-							<div className="col s3 m3 dash-tm-5">
+							<div className="col s4 m4 dash-tm-10">
 								<LineGraph />
 							</div>
-							<div className="col s3 m3 dash-tm-5">
+							<div className="col s4 m4 dash-tm-10">
 								<LineGraph />
 							</div>
-							<div className="col s3 m3 dash-tm-5">
-								<LineGraph />
-							</div>
-							<div className="col s3 m3 dash-tm-5">
+							<div className="col s4 m4 dash-tm-10">
 								<LineGraph />
 							</div>
 						</div>
 						<div className="row">
-							<div className="col s3 m3 dash-tm-2">
+							<div className="col s4 m4 dash-tm-10">
 								<PieChart />
 							</div>
-							<div className="col s3 m3 dash-tm-2">
+							<div className="col s4 m4 dash-tm-10">
 								<PieChart />
 							</div>
-							<div className="col s3 m3 dash-tm-2">
+							<div className="col s4 m4 dash-tm-10">
 								<PieChart />
 							</div>
 
-							<div className="col s3 m3 dash-tm-2">
-								{this.props.locations.map(location => (
-									<FacilityLocation location={location} />
-								))}
-							</div>
+							<div className="col s3 m3 dash-tm-5" />
 						</div>
+
 						<div />
+					</div>
+					<div className="col s3 m3 dash-tm-5">
+						<Card
+							header={
+								<CardTitle className=" grey lighten-1 dashboard-p-2">
+									Facilities
+								</CardTitle>
+							}
+						>
+							{' '}
+							{this.props.locations.map(location => (
+								<FacilityId location={location} />
+							))}
+						</Card>
 					</div>
 				</div>
 				<Footer />
