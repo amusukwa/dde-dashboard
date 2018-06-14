@@ -1,7 +1,7 @@
+//@flow
 import React, { Component } from 'react'
 import { Card, CardTitle } from 'react-materialize'
 import ReactDOM from 'react-dom'
-//@flow
 import {
 	VictoryLine,
 	VictoryChart,
@@ -13,7 +13,7 @@ import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import ChartContainer from '../common/chartContainer'
 
-class PieChart extends Component<> {
+class PieChart extends Component<any> {
 	componentDidMount() {}
 	render() {
 		const chartDefinition = (

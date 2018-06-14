@@ -9,8 +9,11 @@ type Props = {
 	fetchFacilityNpids: Function,
 	fetchTotalIds: Function,
 	fetchLocation: Function,
-	facilities: Array<facilities>,
-	facilityTotals: Array<facilityTotals>
+	facilities: Array<any>,
+	facilityTotals: Array<any>,
+	location: Array<any>,
+	doc_id: number,
+	name: string
 }
 
 class FacilityLocation extends React.Component<Props> {

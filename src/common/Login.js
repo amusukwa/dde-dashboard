@@ -20,8 +20,13 @@ type Props = {
 	fetchTotalIds: Function,
 	fetchLocation: Function
 }
+type State = {
+	username: null,
+	password: null
+};
+
 class Login extends Component<State, Props> {
-	state = {
+	State = {
 		username: null,
 		password: null
 	}

@@ -6,14 +6,15 @@ import {
 	VictoryChart,
 	VictoryAxis,
 	VictoryTheme,
-	VictoryCursorContainer
+	VictoryCursorContainer,
+	VictoryLabel
 } from 'victory'
 import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import ChartContainer from '../common/chartContainer'
 
 type Props = {
-	data: Array<{ x: string, y: number }>
+	data: Array<{ IdTotal: number, day: number }>
 }
 
 export default class LineGraph extends Component<Props> {
@@ -27,8 +28,15 @@ export default class LineGraph extends Component<Props> {
 						data: { stroke: '#c43a31' },
 						parent: { border: '1px solid #ccc' }
 					}}
-					padding={{ top: 40, bottom: 60 }}
-					data={[{ x: 1, y: 2 }, { x: 2, y: 3 }, { x: 3, y: 5 }]}
+					data={[
+						{ x: 1, y: 2 },
+						{ x: 2, y: 3 },
+						{ x: 3, y: 5 },
+						{ x: 4, y: 4 },
+						{ x: 5, y: 7 }
+					]}
+					interpolation="natural"
+					categories={{ x: ['day', 'week', 'month'] }}
 				/>
 			</VictoryChart>
 		)

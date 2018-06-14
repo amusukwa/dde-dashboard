@@ -18,7 +18,7 @@ body {
   margin-right:0px;
 }
 .dashboard-footer{
-  height: 110px;
+  height: 90px;
   padding: 2%;
   width:1850px;
   margin-left: 0px;
@@ -160,7 +160,7 @@ h6 {
   max-height: 450px;
 }
 .mfl-chart-container {
-  max-height: 450px;
+  max-height: 400px;
 }
 .location-chart-container {
   max-height: 450px;
@@ -168,7 +168,7 @@ h6 {
 }
 
 .map-chart-container {
-  max-height: 580px;
+  max-height: 700px;
 }
 
 @media only screen and (min-width: 1920px) {
