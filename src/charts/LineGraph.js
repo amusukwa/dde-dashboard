@@ -1,4 +1,3 @@
-//@flow
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import {
@@ -13,11 +12,7 @@ import { fetchLocation } from '../actions'
 import { connect } from 'react-redux'
 import ChartContainer from '../common/chartContainer'
 
-type Props = {
-	data: Array<{ IdTotal: number, day: number }>
-}
-
-export default class LineGraph extends Component<Props> {
+export default class LineGraph extends Component {
 	componentDidMount() {}
 	render() {
 		const data = this.props

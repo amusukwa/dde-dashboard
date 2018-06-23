@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
 import ChartContainer from '../common/chartContainer'
+import {
+	fetchTotalIds,
+	fetchFacilityNpids,
+	fetchLocation
+} from '../actions/index'
+import { connect } from 'react-redux'
 
 class Table extends Component {
+	async componentDidMount() {
+		await this.props.fetchLocation()
+	}
+
 	render() {
 		const tableDefinition = (
 			<table className="striped">
 				<thead>
 					<tr>
-						<th>Name</th>
+						<th>Facility Name</th>
 						<th>Item Name</th>
 						<th>Item Price</th>
 					</tr>
@@ -18,16 +28,6 @@ class Table extends Component {
 						<td>Alvin</td>
 						<td>Eclair</td>
 						<td>$0.87</td>
-					</tr>
-					<tr>
-						<td>Alan</td>
-						<td>Jellybean</td>
-						<td>$3.76</td>
-					</tr>
-					<tr>
-						<td>Jonathan</td>
-						<td>Lollipop</td>
-						<td>$7.00</td>
 					</tr>
 				</tbody>
 			</table>
@@ -40,4 +40,17 @@ class Table extends Component {
 	}
 }
 
-export default Table
+const mapStateToProps = state => {
+	return {
+		facilities: state.facilities,
+		facilityLocation: state.facilities.facilityLocation
+	}
+}
+
+const mapDispatchToProps = {
+	fetchTotalIds,
+	fetchFacilityNpids,
+	fetchLocation
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table)

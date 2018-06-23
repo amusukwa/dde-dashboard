@@ -15,7 +15,7 @@ class NavBar extends Component {
 						</a>
 						<ul className="right hide-on-med-and-down">
 							<li>
-								<Link to="/">LOG OUT</Link>
+								<Link to="/Login">LOG IN</Link>
 							</li>
 							<li>
 								<a href="lock.html">

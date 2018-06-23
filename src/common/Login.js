@@ -22,8 +22,10 @@ type Props = {
 }
 type State = {
 	username: null,
-	password: null
-};
+	password: null,
+	match: any,
+	current: any
+}
 
 class Login extends Component<State, Props> {
 	State = {

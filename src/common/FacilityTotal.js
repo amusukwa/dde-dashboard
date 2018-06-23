@@ -12,7 +12,7 @@ type Props = {
 	facilities: Array<any>,
 	facilityTotals: Array<any>,
 	location: Array<any>,
-	doc_id: number,
+	doc_id: string,
 	name: string
 }
 
@@ -20,7 +20,6 @@ class FacilityLocation extends React.Component<Props> {
 	async componentWillMount() {
 		await this.props.fetchTotalIds(this.props.location.doc_id)
 		await this.props.fetchFacilityNpids(this.props.location.doc_id)
-		console.log(this.props.facilityTotals)
 	}
 	render() {
 		return (
@@ -35,7 +34,6 @@ class FacilityLocation extends React.Component<Props> {
 }
 
 const mapStateToProps = state => {
-	console.log(state)
 	return {
 		facilities: state.facilities,
 		facilityTotals: state.facilities.facilityIds

@@ -8,4 +8,6 @@ The proxy servers at the facility are able to communicate with the main server a
 
 This dashboard aims to show the different statics of facilities using the DDE application, the dashboard will show the different facilities in Malawi that use the DDE application. The number of total ids assigned to a facility and the ids assigned to a facility. And also the rate of ids assigned in a day, week and a month.
 
-The entire dashboard has been developed using react js, with react-google maps library for rendering the map showing facilities with DDE application. Victory charts another react library has been used to render the line graphs and charts needed.
+The entire dashboard has been developed using react js, with react-google maps library for rendering the map showing facilities with DDE application. Victory charts another react library has been used to render the line graphs and Pie Charts.
+
+Flow a static type checker for javascript was used, using data flow analysis flow infers types and tracks data as it moves through the code.

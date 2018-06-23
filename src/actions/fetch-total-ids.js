@@ -1,4 +1,3 @@
-//@flow
 import axios from 'axios'
 
 export default async function fetchTotalIds(doc_id) {

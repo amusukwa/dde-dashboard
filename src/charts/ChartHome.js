@@ -4,18 +4,19 @@ import NavBar from '../Nav/NavBar'
 import LineGraph from '../charts/LineGraph'
 import Map from '../charts/Map'
 import PieChart from '../charts/PieChart'
-import { fetchLocation } from '../actions'
+import { fetchLocation, checkCredentials } from '../actions'
 import { connect } from 'react-redux'
 import Footer from '../common/Footer'
 import FacilityTotal from '../common/FacilityTotal'
 import fetchFacilityNpids from '../actions/fetch-facilitynpids'
 import { Card, CardTitle } from 'react-materialize'
 import FacilityId from '../common/FacilityId'
+import Table from '../Table/Table'
+import FacilityList from '../common/FacilityList'
 
 class ChartHome extends Component<any> {
-	async componentWillMount() {
+	async componentDidMount() {
 		await this.props.fetchFacilityNpids(this.props.location.doc_id)
-		console.log(this.props.fetchFacilityNpids(this.props.location.doc_id))
 	}
 	render() {
 		return (
@@ -49,33 +50,65 @@ class ChartHome extends Component<any> {
 
 						<div />
 					</div>
+					{!sessionStorage.getItem('loginResponse.access_token') ? (
+						<div className="col s3 m3 dash-tm-2">
+							<Card
+								header={
+									<CardTitle className=" grey lighten-1 dashboard-p-2">
+										Facilities
+									</CardTitle>
+								}
+							>
+								{' '}
+								{this.props.locations.map(location => (
+									<FacilityTotal location={location} />
+								))}
+							</Card>
+						</div>
+					) : (
+						<div className="col s3 m3 dash-tm-2">
+							<Card
+								header={
+									<CardTitle className=" grey lighten-1 dashboard-p-2">
+										Facilities
+									</CardTitle>
+								}
+							>
+								{' '}
+								{this.props.locations.map(location => (
+									<FacilityList location={location} />
+								))}
+							</Card>
+						</div>
+					)}
 					<div className="col s3 m3 dash-tm-2">
-						<Card
-							header={
-								<CardTitle className=" grey lighten-1 dashboard-p-2">
-									Facilities
-								</CardTitle>
-							}
-						>
-							{' '}
-							{this.props.locations.map(location => (
-								<FacilityTotal location={location} />
-							))}
-						</Card>
-					</div>
-					<div className="col s3 m3 dash-tm-2">
-						<Card
-							header={
-								<CardTitle className=" grey lighten-1 dashboard-p-2">
-									Facilities
-								</CardTitle>
-							}
-						>
-							{' '}
-							{this.props.locations.map(location => (
-								<FacilityId location={location} />
-							))}
-						</Card>
+						{!sessionStorage.getItem('loginResponse.access_token') ? (
+							<Card
+								header={
+									<CardTitle className=" grey lighten-1 dashboard-p-2">
+										Facilities
+									</CardTitle>
+								}
+							>
+								{' '}
+								{this.props.locations.map(location => (
+									<FacilityTotal location={location} />
+								))}
+							</Card>
+						) : (
+							<Card
+								header={
+									<CardTitle className=" grey lighten-1 dashboard-p-2">
+										Facilities
+									</CardTitle>
+								}
+							>
+								{' '}
+								{this.props.locations.map(location => (
+									<FacilityList location={location} />
+								))}
+							</Card>
+						)}
 					</div>
 				</div>
 				<Footer />
@@ -87,10 +120,12 @@ class ChartHome extends Component<any> {
 const mapStateToProps = state => {
 	return {
 		locations: state.facilities.facilityLocations,
-		facilities: state.facilities
+		facilities: state.facilities,
+		loginResponse: state.auth.loginResponse
 	}
 }
 export default connect(mapStateToProps, {
 	fetchFacilityNpids,
-	fetchLocation
+	fetchLocation,
+	checkCredentials
 })(ChartHome)

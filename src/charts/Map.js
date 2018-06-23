@@ -45,6 +45,7 @@ const Map = compose(
 				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 			}}
 		/>
+
 		<Marker
 			position={{ lat: -13.95473, lng: 33.7793 }}
 			title="Adventist Health Clinic,Lilongwe"
@@ -91,11 +92,13 @@ const Map = compose(
 const mapStateToProps = state => {
 	console.log(state)
 	return {
-		facilities: state.facilities
+		facilities: state.facilities,
+		facilityLocations: state.facilities.facilityLocations
 	}
 }
 const mapDispatchToProps = {
-	fetchTotalIds
+	fetchTotalIds,
+	fetchLocation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Map)

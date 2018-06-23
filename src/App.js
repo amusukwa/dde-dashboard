@@ -20,7 +20,8 @@ class App extends Component {
 			<React.Fragment>
 				<Router>
 					<Switch>
-						<Route exact path="/" component={Login} />
+						<Route exact path="/" component={ChartHome} />
+						<Route exact path="/Login" component={Login} />
 						<Route path="/ChartHome" component={ChartHome} />
 					</Switch>
 				</Router>
