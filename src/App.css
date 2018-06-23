@@ -1,0 +1,263 @@
+html,
+
+
+body {
+  height: 100%;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  min-height: 710px;
+}
+
+.dashboard-nav {
+  height: 110px;
+  padding: 2%;
+  width:1850px;
+  margin-left: 0px;
+  margin-right:0px;
+}
+.dashboard-footer{
+  height: 90px;
+  padding: 2%;
+  width:1850px;
+  margin-left: 0px;
+  margin-right:0px;
+  position: fixed;
+  bottom : 0;
+}
+
+
+.dash-table tbody tr {
+  cursor: pointer;
+}
+
+.dashboard-p-2 {
+  padding: 2%;
+}
+.dashboard-p-5 {
+  padding: 5%;
+}
+.dash-pr-10 {
+  padding-right: 10%;
+}
+
+.dash-pl-10 {
+  padding-left: 10%;
+}
+
+.dash-pl-2 {
+  padding-left: 2%;
+}
+
+.dash-m-2 {
+  margin: 2%;
+}
+
+.dash-bm-2 {
+  margin-bottom: 2%;
+}
+
+.dash-rm-10 {
+  margin-right: 10%;
+}
+
+.dash-tm-10 {
+  margin-top: 10% !important;
+}
+
+.dash-tm-2 {
+  margin-top: 2% !important;
+}
+.dash-tm-5 {
+  margin-top: 5% !important;
+}
+
+.dash-summary-header,
+.dash-summary-subheader {
+  width: 70%;
+  margin: 20px auto;
+  border-bottom: 1px solid #a6a6a6;
+  color: #a6a6a6;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+.dash-summary-text,
+.dash-summary-subtext {
+  width: 70%;
+  margin: 20px auto;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.dash-summary-subtext {
+  font-size: 18px;
+}
+.dash-title {
+  margin-left: 150px;
+}
+
+.dash-titles h5,
+h6 {
+  margin-top: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: -5px;
+}
+
+.dashboard-shadow {
+  box-shadow: 2px 1px 10px #000;
+}
+.location-shadow {
+  box-shadow: 2px 1px 5px #000;
+}
+
+.mfl-stats-container div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mfl-stats-number {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.mfl-dash-container {
+  max-width: 100% !important;
+  position: relative;
+}
+
+.mfl-map-container {
+  padding: 5px;
+}
+.mfl-graphs-container {
+  flex-grow: 1;
+}
+
+.mfl-dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 97%;
+  margin: 2%;
+}
+
+.dash-card-title {
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 20px;
+}
+.dash-table {
+  max-height: 450px;
+}
+.mfl-chart-container {
+  max-height: 400px;
+}
+.location-chart-container {
+  max-height: 450px;
+  max-width: 400px;
+}
+
+.map-chart-container {
+  max-height: 700px;
+}
+
+@media only screen and (min-width: 1920px) {
+  .row .col.xl2 {
+    width: 16.6666667% !important;
+  }
+  .row .col.xl3 {
+    width: 25% !important;
+  }
+  .row .col.xl10 {
+    width: 83.33333333% !important;
+  }
+}
+
+.mfl-banner {
+  background: #666;
+}
+.mfl-ref {
+  position: relative;
+}
+
+.mfl-abs {
+  position: absolute;
+}
+
+.mfl-banner-img,
+.mfl-parallax {
+  width: 100%;
+  height: 650px;
+}
+
+.mfl-parallax {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding-top: 90px;
+}
+
+.mfl-banner-img {
+  object-fit: cover;
+}
+
+.mfl-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+  margin: 10% auto;
+  padding: 30px;
+  border-left: 4px solid #141414;
+  border-right: 4px solid #1b1b1b;
+  background-color: grey;
+}
+
+.mfl-login-input {
+  height: 50px !important;
+  background-color: white !important;
+  padding-left: 10px !important;
+  color: rgb(71, 71, 71) !important;
+  font-size: 18px !important;
+  box-shadow: none !important;
+}
+
+.mfl-login-input:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.mfl-login-input-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #54617a;
+  height: 53px;
+  border-radius: 5px;
+}
+
+.mfl-login-icon {
+  padding: 15px;
+  height: 51px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.dash-nav-icon {
+  margin-top: -2px;
+}
+
+.dash-nav-item {
+  font-size: 12px !important;
+  text-align: right;
+}

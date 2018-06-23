@@ -1,0 +1,47 @@
+{
+  "name": "dde-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.10",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-google-map": "^3.1.1",
+    "react-google-maps-loader": "^4.2.2",
+    "react-materialize": "^2.2.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-simple-maps": "^0.12.1",
+    "react-svg-map": "^1.0.5",
+    "redux": "^4.0.0",
+    "redux-promise": "^0.6.0",
+    "victory": "^0.26.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amusukwa/dde-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amusukwa/dde-dashboard/issues"
+  },
+  "homepage": "https://github.com/amusukwa/dde-dashboard#readme"
+}
